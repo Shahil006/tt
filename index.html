@@ -1,560 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
-
-  <title>
-    VOX8 Production
-  </title>
-
-  <meta
-    name="description"
-    content="VOX8 Production is a cinematic creative media studio specializing in advertisements, reels, brand shoots, and luxury visual storytelling."
-  />
-
-  <!-- GOOGLE FONTS -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VOX8 Production</title>
+  <meta name="description" content="VOX8 Production is a cinematic creative media studio specializing in advertisements, reels, brand shoots, and luxury visual storytelling." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;900&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- ICONS -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-
-  <!-- CSS -->
-
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
-
 </head>
-
 <body>
 
   <!-- CURSOR -->
-
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
-  <!-- LOADER -->
-
+  <!-- LOADER — inline style guarantees it covers screen before CSS parses -->
   <div class="loader" id="loader">
-
     <div class="loader-inner">
-
-      <div class="loader-logo">
-        VOX8
-      </div>
-
+      <div class="loader-logo">VOX8</div>
       <div class="loader-bar">
         <div class="loader-fill" id="loaderFill"></div>
       </div>
-
     </div>
-
   </div>
 
   <!-- GRAIN -->
-
-  <div class="grain-overlay"></div>
+  <div class="grain-overlay" aria-hidden="true"></div>
 
   <!-- NAVBAR -->
-
   <nav class="nav" id="nav">
-
     <div class="nav-container">
-
-      <!-- LOGO -->
-
       <a href="#hero" class="nav-logo">
-
-        <div class="vox8-logo">
-
-          <div class="vox8-main">
-            VOX8
-          </div>
-
-          <div class="vox8-sub">
-            PRODUCTION
-          </div>
-
-        </div>
-
+        <div class="vox8-main">VOX8</div>
+        <div class="vox8-sub">PRODUCTION</div>
       </a>
-
-      <!-- LINKS -->
-
       <div class="nav-links">
-
-        <a href="#about" class="nav-link">
-          About
-        </a>
-
-        <a href="#services" class="nav-link">
-          Services
-        </a>
-
-        <a href="#contact" class="nav-link">
-          Contact
-        </a>
-
+        <a href="#about" class="nav-link">About</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
-
-      <!-- CTA -->
-
-      <button
-        class="nav-cta"
-        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"
-      >
-        Let's Talk
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Talk</button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
       </button>
-
-      <!-- MOBILE -->
-
-      <button class="hamburger" id="hamburger">
-
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
-
     </div>
-
   </nav>
 
   <!-- MOBILE MENU -->
-
   <div class="mobile-menu" id="mobileMenu">
-
-    <a href="#about" class="mobile-link">
-      About
-    </a>
-
-    <a href="#services" class="mobile-link">
-      Services
-    </a>
-
-    <a href="#contact" class="mobile-link">
-      Contact
-    </a>
-
+    <a href="#about" class="mobile-link">About</a>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#contact" class="mobile-link">Contact</a>
   </div>
 
   <!-- HERO -->
-
   <section class="hero" id="hero">
-
     <div class="hero-bg">
-
-      <img
-        src="images/template2.jpg"
-        alt=""
-        class="hero-bg-img"
-      />
-
+      <img src="images/template2.jpg" alt="" class="hero-bg-img" />
       <div class="hero-bg-overlay"></div>
-
     </div>
-
     <canvas id="particleCanvas"></canvas>
-
     <div class="hero-content">
-
       <h1 class="hero-heading scroll-reveal">
-
-        CINEMATIC <br />
-        BRAND STORYTELLING
-
+        CINEMATIC<br />BRAND<br />STORYTELLING
       </h1>
-
       <p class="hero-sub scroll-reveal">
-
-        Premium advertisements, cinematic reels,
-        luxury brand shoots, and visual storytelling
-        crafted for modern brands.
-
+        Premium advertisements, cinematic reels, luxury brand shoots,
+        and visual storytelling crafted for modern brands.
       </p>
-
       <div class="hero-btns scroll-reveal">
-
-        <a href="#services" class="btn btn-primary">
-          View Services
-        </a>
-
-        <a href="#contact" class="btn btn-ghost">
-          Contact Us
-        </a>
-
+        <a href="#services" class="btn btn-primary">View Services</a>
+        <a href="#contact" class="btn btn-ghost">Contact Us</a>
       </div>
-
     </div>
-
   </section>
 
   <!-- ABOUT -->
-
   <section class="about" id="about">
-
     <div class="section-container">
-
       <div class="about-layout">
-
-        <!-- HUGE TITLE -->
-
         <div class="about-left scroll-reveal">
-
-          <h2 class="about-big-title">
-
-            WE CREATE <br />
-            VISUAL <br />
-            EXPERIENCES
-
-          </h2>
-
+          <h2 class="about-big-title">WE CREATE<br />VISUAL<br />EXPERIENCES</h2>
         </div>
-
-        <!-- CONTENT -->
-
         <div class="about-right scroll-reveal">
-
-          <p class="about-text">
-
-            VOX8 Production is a cinematic creative agency
-            focused on premium visual storytelling,
-            advertisements, luxury reels,
-            and modern brand identity.
-
-          </p>
-
-          <p class="about-text">
-
-            We transform creative concepts into
-            high-impact cinematic visuals.
-
-          </p>
-
-          <!-- STATS -->
-
+          <p class="about-text">VOX8 Production is a cinematic creative agency focused on premium visual storytelling, advertisements, luxury reels, and modern brand identity.</p>
+          <p class="about-text">We transform creative concepts into high-impact cinematic visuals.</p>
           <div class="about-stats">
-
-            <div class="stat-box">
-
-              <h3>
-                100+
-              </h3>
-
-              <span>
-                PROJECTS
-              </span>
-
-            </div>
-
-            <div class="stat-box">
-
-              <h3>
-                4K
-              </h3>
-
-              <span>
-                PRODUCTION
-              </span>
-
-            </div>
-
-            <div class="stat-box">
-
-              <h3>
-                24/7
-              </h3>
-
-              <span>
-                CREATIVITY
-              </span>
-
-            </div>
-
+            <div class="stat-box"><h3>100+</h3><span>PROJECTS</span></div>
+            <div class="stat-box"><h3>4K</h3><span>PRODUCTION</span></div>
+            <div class="stat-box"><h3>24/7</h3><span>CREATIVITY</span></div>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- SERVICES -->
-
   <section class="services" id="services">
-
     <div class="section-container">
-
       <div class="services-header scroll-reveal">
-
-        <span>
-          OUR SERVICES
-        </span>
-
+        <span>OUR SERVICES</span>
       </div>
-
       <div class="services-grid">
-
-        <!-- SERVICE 1 -->
-
         <div class="service-card scroll-reveal">
-
-          <img
-            src="images/work2.jpg"
-            alt=""
-            class="service-bg-img"
-          />
-
+          <img src="images/work2.jpg" alt="" class="service-bg-img" />
           <div class="service-image-overlay"></div>
-
           <div class="service-content">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-clapperboard"></i>
-            </div>
-
-            <h3 class="service-title">
-              Advertisement Production
-            </h3>
-
-            <p class="service-desc">
-
-              Cinematic advertisements crafted
-              to elevate modern brands.
-
-            </p>
-
+            <div class="service-icon"><i class="fa-solid fa-clapperboard"></i></div>
+            <h3 class="service-title">Advertisement Production</h3>
+            <p class="service-desc">Cinematic advertisements crafted to elevate modern brands.</p>
           </div>
-
         </div>
-
-        <!-- SERVICE 2 -->
-
         <div class="service-card scroll-reveal">
-
-          <img
-            src="images/work4.jpg"
-            alt=""
-            class="service-bg-img"
-          />
-
+          <img src="images/work4.jpg" alt="" class="service-bg-img" />
           <div class="service-image-overlay"></div>
-
           <div class="service-content">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-mobile-screen"></i>
-            </div>
-
-            <h3 class="service-title">
-              Social Media Reels
-            </h3>
-
-            <p class="service-desc">
-
-              Scroll-stopping cinematic reels
-              designed for social platforms.
-
-            </p>
-
+            <div class="service-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3 class="service-title">Social Media Reels</h3>
+            <p class="service-desc">Scroll-stopping cinematic reels designed for social platforms.</p>
           </div>
-
         </div>
-
-        <!-- SERVICE 3 -->
-
         <div class="service-card scroll-reveal">
-
-          <img
-            src="images/hero.jpg"
-            alt=""
-            class="service-bg-img"
-          />
-
+          <img src="images/hero.jpg" alt="" class="service-bg-img" />
           <div class="service-image-overlay"></div>
-
           <div class="service-content">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-camera"></i>
-            </div>
-
-            <h3 class="service-title">
-              Brand Shoots
-            </h3>
-
-            <p class="service-desc">
-
-              Luxury photography and cinematic
-              visuals for premium branding.
-
-            </p>
-
+            <div class="service-icon"><i class="fa-solid fa-camera"></i></div>
+            <h3 class="service-title">Brand Shoots</h3>
+            <p class="service-desc">Luxury photography and cinematic visuals for premium branding.</p>
           </div>
-
         </div>
-
-        <!-- SERVICE 4 -->
-
         <div class="service-card scroll-reveal">
-
-          <img
-            src="images/work1.jpg"
-            alt=""
-            class="service-bg-img"
-          />
-
+          <img src="images/work1.jpg" alt="" class="service-bg-img" />
           <div class="service-image-overlay"></div>
-
           <div class="service-content">
-
-            <div class="service-icon">
-              <i class="fa-solid fa-lightbulb"></i>
-            </div>
-
-            <h3 class="service-title">
-              Creative Direction
-            </h3>
-
-            <p class="service-desc">
-
-              Premium concepts, storytelling,
-              and cinematic creative execution.
-
-            </p>
-
+            <div class="service-icon"><i class="fa-solid fa-lightbulb"></i></div>
+            <h3 class="service-title">Creative Direction</h3>
+            <p class="service-desc">Premium concepts, storytelling, and cinematic creative execution.</p>
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- CONTACT -->
-
   <section class="contact" id="contact">
-
     <div class="section-container">
-
       <div class="contact-inner scroll-reveal">
-
-        <div class="contact-small">
-          GET IN TOUCH
-        </div>
-
-        <h2 class="contact-heading">
-
-          LET'S BUILD <br />
-          SOMETHING VISUAL
-
-        </h2>
-
-        <p class="contact-text">
-
-          Ready to elevate your brand?
-          Let's create cinematic content together.
-
-        </p>
-
+        <div class="contact-small">GET IN TOUCH</div>
+        <h2 class="contact-heading">LET'S BUILD<br />SOMETHING VISUAL</h2>
+        <p class="contact-text">Ready to elevate your brand? Let's create cinematic content together.</p>
         <div class="contact-btns">
-
-          <!-- INSTAGRAM -->
-
-          <a
-            href="https://www.instagram.com/vox8.ads"
-            target="_blank"
-            class="contact-btn"
-          >
-
-            <i class="fa-brands fa-instagram"></i>
-
-            Instagram
-
+          <a href="https://www.instagram.com/vox8.ads" target="_blank" class="contact-btn">
+            <i class="fa-brands fa-instagram"></i> Instagram
           </a>
-
-          <!-- WHATSAPP -->
-
-          <a
-            href="https://wa.me/919961295775"
-            target="_blank"
-            class="contact-btn"
-          >
-
-            <i class="fa-brands fa-whatsapp"></i>
-
-            WhatsApp
-
+          <a href="https://wa.me/919961295775" target="_blank" class="contact-btn">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
           </a>
-
         </div>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- FOOTER -->
-
   <footer class="footer">
-
     <div class="section-container">
-
       <div class="footer-inner">
-
-        <div class="footer-logo">
-          VOX8
-        </div>
-
-        <p class="footer-text">
-
-          Cinematic content crafted for modern brands.
-
-        </p>
-
-        <div class="footer-copy">
-
-          © 2026 VOX8 Production.
-          All Rights Reserved.
-
-        </div>
-
+        <div class="footer-logo">VOX8</div>
+        <p class="footer-text">Cinematic content crafted for modern brands.</p>
+        <div class="footer-copy">© 2026 VOX8 Production. All Rights Reserved.</div>
       </div>
-
     </div>
-
   </footer>
 
-  <!-- SCRIPT -->
-
   <script src="script.js"></script>
-
 </body>
-
 </html>
