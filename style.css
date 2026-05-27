@@ -621,6 +621,17 @@ body{
     padding:0 20px;
   }
 
+  .vox8-main{
+    font-size:1.8rem;
+    letter-spacing:.16em;
+  }
+
+  .vox8-sub{
+    font-size:.52rem;
+    letter-spacing:.38em;
+    margin-top:.4rem;
+  }
+
   .hero{
 
     min-height:100svh;
@@ -661,36 +672,42 @@ body{
 
     width:100%;
 
-    max-width:320px;
+    max-width:240px;
 
-    font-size:clamp(2.4rem,11vw,4rem);
+    font-size:2.7rem;
 
-    line-height:.95;
+    line-height:.88;
 
-    letter-spacing:-0.03em;
-
-    text-align:left;
+    letter-spacing:-0.06em;
 
     font-weight:900;
 
+    text-transform:uppercase;
+
+    text-align:left;
+
     white-space:normal;
 
-    word-break:normal;
+    word-break:keep-all;
 
     overflow-wrap:normal;
 
     hyphens:none;
   }
 
+  .hero-heading br{
+    display:block;
+  }
+
   .hero-sub{
 
     width:100%;
 
-    max-width:320px;
+    max-width:300px;
 
     margin:1.3rem 0 2rem;
 
-    font-size:.92rem;
+    font-size:.9rem;
 
     line-height:1.8;
 
@@ -701,7 +718,7 @@ body{
 
     width:100%;
 
-    max-width:320px;
+    max-width:300px;
 
     display:flex;
 
@@ -788,13 +805,13 @@ body{
   }
 
   .hero-heading{
-    max-width:290px;
-    font-size:clamp(2rem,11vw,3.2rem);
+    max-width:220px;
+    font-size:2.3rem;
   }
 
   .hero-sub{
-    max-width:280px;
-    font-size:.88rem;
+    max-width:260px;
+    font-size:.85rem;
   }
 
   .section-container,
