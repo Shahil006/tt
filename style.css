@@ -1,5 +1,5 @@
 /* ============================================
-   VOX8 FINAL FULL CSS FILE
+   VOX8 FINAL FULL CSS FILE — iOS FIXED
 ============================================ */
 
 /* RESET */
@@ -592,7 +592,7 @@ body{
 }
 
 /* ============================================
-   MOBILE FIX
+   MOBILE FIX — iOS SAFARI HEADING BUG FIXED
 ============================================ */
 
 @media(max-width:768px){
@@ -633,66 +633,47 @@ body{
   }
 
   .hero{
-
     min-height:100svh;
-
     width:100%;
-
     align-items:flex-end;
-
     justify-content:flex-start;
-
     overflow:hidden;
-
     padding-top:120px;
   }
 
   .hero-content{
-
     width:100%;
-
     max-width:100%;
-
     padding:0 22px 80px;
-
     margin:0;
-
     display:flex;
-
     flex-direction:column;
-
     align-items:flex-start;
-
     justify-content:flex-end;
-
     overflow:hidden;
   }
 
+  /* ── iOS SAFARI FIX ──────────────────────────
+     The old rule had max-width:240px which forced
+     each word to wrap letter-by-letter on iOS.
+     Solution: let the heading use full width,
+     drive size with a safe vw clamp, and let
+     the browser break naturally at word boundaries.
+  ─────────────────────────────────────────────── */
   .hero-heading{
-
     width:100%;
-
-    max-width:240px;
-
-    font-size:2.7rem;
-
-    line-height:.88;
-
-    letter-spacing:-0.06em;
-
+    max-width:100%;            /* removed the 240px cap that caused iOS letter-wrap  */
+    font-size:clamp(2.4rem,11vw,4rem);  /* fluid but never so large it forces mid-word breaks */
+    line-height:.92;
+    letter-spacing:-0.02em;   /* tighter tracking so words fit without breaking     */
     font-weight:900;
-
     text-transform:uppercase;
-
     text-align:left;
-
     white-space:normal;
-
-    word-break:keep-all;
-
-    overflow-wrap:normal;
-
+    word-break:normal;         /* override keep-all — normal respects word boundaries */
+    overflow-wrap:normal;      /* don't break inside words                           */
     hyphens:none;
+    -webkit-hyphens:none;      /* explicit Safari prefix                             */
   }
 
   .hero-heading br{
@@ -700,30 +681,19 @@ body{
   }
 
   .hero-sub{
-
     width:100%;
-
-    max-width:300px;
-
+    max-width:340px;
     margin:1.3rem 0 2rem;
-
     font-size:.9rem;
-
     line-height:1.8;
-
     text-align:left;
   }
 
   .hero-btns{
-
     width:100%;
-
-    max-width:300px;
-
+    max-width:340px;
     display:flex;
-
     flex-direction:column;
-
     gap:12px;
   }
 
@@ -731,9 +701,7 @@ body{
   .btn-primary,
   .btn-ghost,
   .contact-btn{
-
     width:100%;
-
     justify-content:center;
   }
 
@@ -805,12 +773,12 @@ body{
   }
 
   .hero-heading{
-    max-width:220px;
-    font-size:2.3rem;
+    max-width:100%;
+    font-size:clamp(2rem,10vw,3.2rem);
   }
 
   .hero-sub{
-    max-width:260px;
+    max-width:280px;
     font-size:.85rem;
   }
 
